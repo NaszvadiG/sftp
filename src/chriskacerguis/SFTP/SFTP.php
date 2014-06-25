@@ -4,7 +4,7 @@
  *
  * @author  Chris Kacerguis <public@cold.io>
  * @link    https://github.com/chriskacerguis/sftp
- * @license Propritary
+ * @license MIT
  */
 
 namespace chriskacerguis\SFTP;
@@ -79,10 +79,10 @@ class SFTP
      * [__destruct description]
      * @author Chris Kacerguis <public@cold.io>
      */
-    public function __destruct() 
-    { 
-        $this->disconnect(); 
-    } 
+    public function __destruct()
+    {
+        $this->disconnect();
+    }
 
     /**
      * [connect description]
@@ -123,11 +123,11 @@ class SFTP
      * [disconnect description]
      * @return [type] [description]
      */
-    public function disconnect() 
-    { 
-        @ssh2_exec('echo "EXITING" && exit;'); 
-        $this->conn = null; 
-    } 
+    public function disconnect()
+    {
+        @ssh2_exec('echo "EXITING" && exit;');
+        $this->conn = null;
+    }
 
     /**
      * [upload description]
@@ -180,9 +180,9 @@ class SFTP
         if (!$stream = @ssh2_exec($this->conn, "ls {$path}")) {
             throw new Exception('unable to ');
         }
-        stream_set_blocking($stream, true); 
-        $cmd    = fread($stream, 4096); 
-        return explode("\n", $cmd); 
+        stream_set_blocking($stream, true);
+        $cmd    = fread($stream, 4096);
+        return explode("\n", $cmd);
     }
 
     /**
@@ -208,7 +208,7 @@ class SFTP
 
         return $stream;
     }
-    
+
     /**
      * [rename description]
      * @param  [type] $oldFile [description]
@@ -236,7 +236,7 @@ class SFTP
 
     public function exists($remote)
     {
-        
+
     }
 
 
