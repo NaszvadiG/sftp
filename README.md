@@ -10,7 +10,7 @@ A simple library for interacting with SFTP servers.
 
 ### Directions
 
-````
+```php
 $SFTP = new \chriskacerguis\SFTP();
 
 // the FQDN you want to connect to
@@ -52,4 +52,4 @@ $sftp->mkdir($remotePath, $permissions = 0755);
 // Renames a file
 $sftp->move($oldFile, $newFile);
 
-````
+```
